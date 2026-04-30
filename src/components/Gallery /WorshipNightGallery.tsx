@@ -33,7 +33,7 @@ export default function WorshipNightGallery() {
         <div className="mb-16 text-center">
           <span className="text-brand-gold font-black tracking-[0.4em] text-[10px] uppercase">Special Presence</span>
           <h2 className="text-4xl md:text-5xl font-black text-brand-navy tracking-tighter mt-1">
-            WORSHIP NIGHTS <span className="text-brand-gold italic text-brand-navy/40">& HOLIDAYS</span>
+            NIGHTS <span className="text-brand-gold italic text-brand-gold">& HOLIDAYS</span>
           </h2>
         </div>
 
