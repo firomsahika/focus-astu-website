@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
-  variable: "--font-geist-sans",
+  variable: "--font-inter", // Fixed naming for consistency
   subsets: ["latin"],
 });
 
@@ -23,11 +25,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased selection:bg-brand-gold selection:text-brand-navy`}
+        className={`${inter.variable} ${outfit.variable} antialiased selection:bg-brand-gold selection:text-brand-navy font-outfit`}
       >
-        {children}
+        {/* The Header appears at the top of every page */}
+        <Header />
+
+        {/* 
+            Wrapping children in <main> ensures content is 
+            structured correctly for accessibility and SEO 
+        */}
+        <main className="min-h-screen">
+          {children}
+        </main>
+
+        {/* The Footer appears at the bottom of every page */}
+        <Footer />
       </body>
     </html>
   );

@@ -15,17 +15,18 @@ const graceParticles = Array.from({ length: 30 }).map((_, i) => ({
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-brand-navy">
-      
+
       {/* --- Falling Grace Animation Layer --- */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
         {graceParticles.map((p) => (
           <motion.div
             key={p.id}
             initial={{ y: "-10vh", opacity: 0 }}
-            animate={{ 
-              y: "110vh", 
-              opacity: [0, 0.4, 0.4, 0],
-              x: ["-20px", "20px", "-20px"] // Subtle swaying like snow
+            animate={{
+              y: "110vh",
+              // Increased opacity slightly from 0.4 to 0.6 for a brighter white look
+              opacity: [0, 0.6, 0.6, 0],
+              x: ["-20px", "20px", "-20px"]
             }}
             transition={{
               duration: p.duration,
@@ -39,7 +40,8 @@ export default function Hero() {
               width: p.size,
               height: p.size,
             }}
-            className="absolute bg-brand-gold rounded-full blur-[1px]"
+            // Changed from bg-brand-gold to bg-white
+            className="absolute bg-white rounded-full blur-[1px] shadow-[0_0_8px_rgba(255,255,255,0.8)]"
           />
         ))}
       </div>

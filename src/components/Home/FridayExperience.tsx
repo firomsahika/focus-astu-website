@@ -76,7 +76,7 @@ export default function FridayExperience() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black text-brand-navy mb-6 tracking-tight"
           >
-            The Friday Experience
+            The Friday Program
           </motion.h2>
         </div>
 
@@ -150,7 +150,7 @@ export default function FridayExperience() {
               variants={itemVariants}
               whileHover={{
                 y: -15,
-                transition: { duration: 0.3, ease: "easeOut" }
+                transition: { duraticon: 0.3, ease: "easeOut" }
               }}
               className={`relative overflow-hidden bg-gradient-to-br ${item.color} p-10 rounded-[2.5rem] border border-white shadow-xl group transition-shadow hover:shadow-2xl`}
             >
