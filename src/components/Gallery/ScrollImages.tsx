@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+// Define the type for the component props
+interface ScrollImageProps {
+    images: string[];
+    direction?: "left" | "right";
+}
+
 const row1 = [
     "/images/1.jpg",
     "/images/graduates1.jpg",
@@ -17,8 +23,8 @@ const row1 = [
     "/images/choir2.jpg",
     "/images/12.jpg",
     "/images/mission5.jpg",
-
 ];
+
 const row2 = [
     "/images/1.jpg",
     "/images/graduates1.jpg",
@@ -33,11 +39,10 @@ const row2 = [
     "/images/choir2.jpg",
     "/images/12.jpg",
     "/images/mission6.jpg",
-
-
 ];
 
-const ScrollImage = ({ images, direction = "left" }) => (
+// Apply the interface to the component
+const ScrollImage = ({ images, direction = "left" }: ScrollImageProps) => (
     <div className="flex overflow-hidden gap-4 py-2">
         <motion.div
             animate={{ x: direction === "left" ? [0, -1000] : [-1000, 0] }}
@@ -46,7 +51,12 @@ const ScrollImage = ({ images, direction = "left" }) => (
         >
             {[...images, ...images].map((src, i) => (
                 <div key={i} className="relative w-64 h-40 md:w-80 md:h-52 overflow-hidden rounded-2xl border border-white/5">
-                    <Image src={src} alt="Gallery" fill className="object-cover hover:scale-110 transition-transform duration-700" />
+                    <Image
+                        src={src}
+                        alt="Gallery"
+                        fill
+                        className="object-cover hover:scale-110 transition-transform duration-700"
+                    />
                 </div>
             ))}
         </motion.div>

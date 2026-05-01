@@ -3,13 +3,30 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Users2, ChevronDown } from "lucide-react";
+import { Calendar, Clock, MapPin, Users2, ChevronDown, LucideIcon } from "lucide-react";
+
+// 1. Define types for the animation particles
+interface Particle {
+  id: number;
+  left: string;
+  duration: number;
+  delay: number;
+  size: number;
+}
+
+// 2. Define types for the info items
+interface InfoItem {
+  icon: LucideIcon;
+  label: string;
+  val: string;
+}
 
 export default function TeamsHero() {
-  const [particles, setParticles] = useState([]);
+  // Apply the Particle type to the state
+  const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const generated = Array.from({ length: 25 }).map((_, i) => ({
+    const generated: Particle[] = Array.from({ length: 25 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       duration: Math.random() * 8 + 12,
@@ -19,26 +36,33 @@ export default function TeamsHero() {
     setParticles(generated);
   }, []);
 
+  const infoItems: InfoItem[] = [
+    { icon: Calendar, label: "Day", val: "Fridays" },
+    { icon: Clock, label: "Time", val: "11:30 LT" },
+    { icon: MapPin, label: "Place", val: "Bole MY" },
+    { icon: Users2, label: "Units", val: "12+ Teams" }
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-navy py-20">
 
-      {/* --- BACKGROUND IMAGE LAYER (Matched to Home Page Style) --- */}
+      {/* --- BACKGROUND IMAGE LAYER --- */}
       <div className="absolute inset-0 z-0">
         <Image
+          // WARNING: Ensure this filename matches exactly (case and spaces) in your public/images folder
           src="/images/worship night.jpg"
           alt="Teams Background"
           fill
-          className="object-cover" // Removed opacity-30 and scale to make it look like Home
+          className="object-cover"
           priority
         />
-        {/* These two divs create the depth while keeping text readable */}
         <div className="absolute inset-0 bg-brand-navy/60 backdrop-blur-[1px]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-navy/20 to-brand-navy"></div>
       </div>
 
       {/* --- Falling Grace Animation Layer --- */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        {particles.map((p) => (
+        {particles.map((p: Particle) => (
           <motion.div
             key={p.id}
             initial={{ y: "-10vh", opacity: 0 }}
@@ -64,10 +88,7 @@ export default function TeamsHero() {
         ))}
       </div>
 
-      {/* Main Content Wrapper */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center">
-
-        {/* Subtle Badge */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,7 +97,6 @@ export default function TeamsHero() {
           Our Structure
         </motion.div>
 
-        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,7 +106,6 @@ export default function TeamsHero() {
           TEAMS & <span className="text-brand-gold italic">COORDINATORS</span>
         </motion.h1>
 
-        {/* Verse Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -105,19 +124,14 @@ export default function TeamsHero() {
           </div>
         </motion.div>
 
-        {/* Info Bar */}
+        {/* Info Bar with explicit types for map parameters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-white/[0.02] border border-white/10 rounded-[2rem] overflow-hidden"
         >
-          {[
-            { icon: Calendar, label: "Day", val: "Fridays" },
-            { icon: Clock, label: "Time", val: "11:30 LT" },
-            { icon: MapPin, label: "Place", val: "Bole MY" },
-            { icon: Users2, label: "Units", val: "12+ Teams" }
-          ].map((item, i) => (
+          {infoItems.map((item: InfoItem, i: number) => (
             <div key={i} className="p-6 flex flex-col items-center justify-center border-white/5 border-b sm:border-b-0 sm:border-r last:border-0">
               <item.icon className="text-brand-gold/60 mb-2" size={20} />
               <span className="text-[9px] text-white/30 uppercase font-bold tracking-widest mb-1">{item.label}</span>
@@ -126,7 +140,6 @@ export default function TeamsHero() {
           ))}
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}

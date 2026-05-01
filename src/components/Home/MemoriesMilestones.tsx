@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Camera, Calendar, Heart, Star } from "lucide-react";
+import Link from "next/link"
 
 const MEMORIES = [
   {
@@ -137,12 +138,14 @@ export default function MemoriesMilestones() {
           whileInView={{ opacity: 1 }}
           className="mt-12 flex justify-center"
         >
-          <button className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-bold text-sm hover:bg-white/10 transition-all group">
-            SEE OUR FULL GALLERY
-            <div className="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center text-brand-navy transition-transform group-hover:rotate-45">
-              →
-            </div>
-          </button>
+          <Link href="/gallery">
+            <button className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-bold text-sm hover:bg-white/10 transition-all group">
+              SEE OUR FULL GALLERY
+              <div className="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center text-brand-navy transition-transform group-hover:rotate-45">
+                →
+              </div>
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>
