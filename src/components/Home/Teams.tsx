@@ -4,8 +4,22 @@ import { motion } from "framer-motion";
 import {
   Music, Flame, Palette, Heart, HandHelping,
   ScanEye, Users, BookOpen, GraduationCap,
-  Stethoscope, Globe, ChevronRight, Sparkles
+  Stethoscope, Globe, ChevronRight, Sparkles,
+  LucideIcon
 } from "lucide-react";
+
+// 1. Define the shape of your data
+interface FellowshipItem {
+  name: string;
+  icon: LucideIcon;
+  desc: string;
+}
+
+// 2. Define Prop interfaces for the components
+interface ComponentProps {
+  item: FellowshipItem;
+  index: number;
+}
 
 const DATA = {
   teams: [
@@ -126,7 +140,8 @@ export default function FellowshipStructure() {
   );
 }
 
-function TeamCard({ item, index }) {
+// 3. Apply types to the component arguments
+function TeamCard({ item, index }: ComponentProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -145,7 +160,7 @@ function TeamCard({ item, index }) {
   );
 }
 
-function CoordinatorCard({ item, index }) {
+function CoordinatorCard({ item, index }: ComponentProps) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -154,7 +169,6 @@ function CoordinatorCard({ item, index }) {
       transition={{ delay: index * 0.1 }}
       className="group relative bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 p-8 md:p-10 rounded-[2.5rem] overflow-hidden"
     >
-      {/* Decorative large icon for coordinators */}
       <item.icon className="absolute -right-8 -bottom-8 size-48 text-white/[0.02] group-hover:text-brand-gold/[0.04] transition-all duration-700 rotate-12" />
 
       <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
