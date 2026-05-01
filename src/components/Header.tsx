@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation"; //
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image"
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -37,26 +38,25 @@ export default function Header() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-xl md:text-2xl font-bold tracking-tighter text-white">
-          FOCUS<span className="text-brand-gold">ASTU</span>
+          <Image src="/images/logo.jpg" alt="logo" width={60} height={60} className="object-cover rounded-4xl" />
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href; //
-            
+
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative text-[13px] uppercase tracking-widest font-semibold transition-colors duration-300 ${
-                  isActive ? "text-brand-gold" : "text-white/90 hover:text-brand-gold"
-                }`}
+                className={`relative text-[13px] uppercase tracking-widest font-semibold transition-colors duration-300 ${isActive ? "text-brand-gold" : "text-white/90 hover:text-brand-gold"
+                  }`}
               >
                 {link.name}
                 {/* Active Indicator Underline */}
                 {isActive && (
-                  <motion.div 
+                  <motion.div
                     layoutId="nav-underline"
                     className="absolute -bottom-1 left-0 right-0 h-[2px] bg-brand-gold rounded-full"
                   />
@@ -97,14 +97,13 @@ export default function Header() {
             <div className="flex flex-col p-8 space-y-6">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href; //
-                
+
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`text-lg font-bold transition-colors ${
-                      isActive ? "text-brand-gold pl-2 border-l-2 border-brand-gold" : "text-white/90 hover:text-brand-gold"
-                    }`}
+                    className={`text-lg font-bold transition-colors ${isActive ? "text-brand-gold pl-2 border-l-2 border-brand-gold" : "text-white/90 hover:text-brand-gold"
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
