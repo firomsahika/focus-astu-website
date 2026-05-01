@@ -1,9 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mic2, Music, BookOpen, Clock, MapPin, Sparkles } from "lucide-react";
+import { Mic2, Music, BookOpen, Clock, MapPin, Sparkles, LucideIcon } from "lucide-react";
 
-const EXPERIENCES = [
+// --- Types for TypeScript stability ---
+interface Experience {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  color: string;
+}
+
+const EXPERIENCES: Experience[] = [
   {
     icon: Mic2,
     title: "Prayer",
@@ -24,7 +32,7 @@ const EXPERIENCES = [
   },
 ];
 
-// Animation Variants
+// --- Animation Variants with Literal Types ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -38,14 +46,18 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 100, damping: 15 }
+    transition: {
+      type: "spring" as const, // Fixed: Added 'as const' for literal type
+      stiffness: 100,
+      damping: 15
+    }
   },
 };
 
 export default function FridayExperience() {
   return (
     <section id="friday" className="py-24 bg-[#F8F9FA] relative overflow-hidden">
-      {/* --- Animated Background Decorative Blobs --- */}
+      {/* Background Decorative Blobs */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], x: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -58,7 +70,6 @@ export default function FridayExperience() {
       />
 
       <div className="container mx-auto px-6 relative z-10">
-
         {/* Main Header */}
         <div className="text-center mb-12">
           <motion.div
@@ -80,7 +91,7 @@ export default function FridayExperience() {
           </motion.h2>
         </div>
 
-        {/* --- Schedule & Location Banner with Magnetic Entrance --- */}
+        {/* Schedule & Location Banner */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -136,7 +147,7 @@ export default function FridayExperience() {
           </p>
         </motion.div>
 
-        {/* --- Experience Cards with Staggered Entrance --- */}
+        {/* Experience Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -150,11 +161,10 @@ export default function FridayExperience() {
               variants={itemVariants}
               whileHover={{
                 y: -15,
-                transition: { duraticon: 0.3, ease: "easeOut" }
+                transition: { duration: 0.3, ease: "easeOut" } // Fixed: Changed 'duraticon' to 'duration'
               }}
               className={`relative overflow-hidden bg-gradient-to-br ${item.color} p-10 rounded-[2.5rem] border border-white shadow-xl group transition-shadow hover:shadow-2xl`}
             >
-              {/* Spinning Decorative Icon on Hover */}
               <item.icon className="absolute -right-4 -bottom-4 text-brand-navy/5 size-32 rotate-12 group-hover:rotate-[360deg] group-hover:scale-125 transition-all duration-[2000ms] ease-in-out" />
 
               <div className="relative z-10">
