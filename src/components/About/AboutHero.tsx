@@ -8,7 +8,7 @@ export default function AboutHero() {
         <section className="relative h-[70vh] flex items-center justify-center bg-brand-navy overflow-hidden">
             <div className="absolute inset-0 opacity-30">
                 <Image
-                    src="/images/hero.png"
+                    src="/images/5.jpg"
                     alt="FOCUS ASTU Fellowship"
                     fill
                     className="object-cover"

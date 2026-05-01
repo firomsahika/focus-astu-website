@@ -39,7 +39,7 @@ export default function OurMission() {
                     </div>
 
                     <div className="relative aspect-square lg:aspect-auto rounded-[4rem] overflow-hidden shadow-2xl">
-                        <Image src="/images/hero.png" alt="Worship" fill className="object-cover" />
+                        <Image src="/images/7.jpg" alt="Worship" fill className="object-cover" />
                     </div>
                 </div>
             </div>

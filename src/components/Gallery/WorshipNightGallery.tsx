@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const WORSHIP_HOLIDAY_MOMENTS = [
-  { size: "md:col-span-3 md:row-span-3", label: "Holy Adoration" },
-  { size: "md:col-span-3 md:row-span-1", label: "Easter Feast" },
-  { size: "md:col-span-3 md:row-span-2", label: "Candlelight Night" },
-  { size: "md:col-span-3 md:row-span-1", label: "Intimacy" },
-  { size: "md:col-span-3 md:row-span-2", label: "Genna Fellowship" },
-  { size: "md:col-span-3 md:row-span-1", label: "The Presence" },
-  { size: "md:col-span-2 md:row-span-2", label: "Vocal Power" },
-  { size: "md:col-span-4 md:row-span-2", label: "Night of Power" },
-  { size: "md:col-span-3 md:row-span-1", label: "Holiday Joy" },
-  { size: "md:col-span-3 md:row-span-1", label: "New Year Prayer" },
-  { size: "md:col-span-2 md:row-span-2", label: "Instrumentals" },
-  { size: "md:col-span-4 md:row-span-1", label: "Sanctuary Bloom" },
-  { size: "md:col-span-3 md:row-span-2", label: "Deep Worship" },
-  { size: "md:col-span-3 md:row-span-1", label: "Fasika Celebration" },
-  { size: "md:col-span-2 md:row-span-1", label: "Humble Hearts" },
-  { size: "md:col-span-4 md:row-span-1", label: "Choir Unity" },
-  { size: "md:col-span-3 md:row-span-2", label: "Altar Moments" },
-  { size: "md:col-span-3 md:row-span-1", label: "Holiday Meal" },
-  { size: "md:col-span-2 md:row-span-1", label: "Grace" },
-  { size: "md:col-span-4 md:row-span-1", label: "Reverence" },
+  { size: "md:col-span-4 md:row-span-2", label: "Main Worship", src: "/images/1.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Prayer", src: "/images/2.jpg" },
+  { size: "md:col-span-3 md:row-span-2", label: "The Word", src: "/images/3.jpg" },
+  { size: "md:col-span-3 md:row-span-1", label: "Nathanim Prep", src: "/images/4.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Welcome", src: "/images/5.jpg" },
+  { size: "md:col-span-3 md:row-span-1", label: "Choir Harmony", src: "/images/6.jpg" },
+  { size: "md:col-span-2 md:row-span-2", label: "Intercession", src: "/images/7.jpg" },
+  { size: "md:col-span-3 md:row-span-2", label: "Fellowship", src: "/images/8.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Digital Team", src: "/images/9.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Greeting", src: "/images/10.jpg" },
+  { size: "md:col-span-3 md:row-span-2", label: "LAD Performance", src: "/images/11.jpg" },
+  { size: "md:col-span-4 md:row-span-1", label: "Audience", src: "/images/12.jpg" },
+  { size: "md:col-span-3 md:row-span-1", label: "Sanctuary", src: "/images/13.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Post-Service", src: "/images/1.jpg" },
+  { size: "md:col-span-3 md:row-span-1", label: "Group Photo", src: "/images/2.jpg" },
+  { size: "md:col-span-2 md:row-span-2", label: "Action Call", src: "/images/3.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Tech Booth", src: "/images/4.jpg" },
+  { size: "md:col-span-3 md:row-span-1", label: "Family Meeting", src: "/images/5.jpg" },
+  { size: "md:col-span-2 md:row-span-1", label: "Blessing", src: "/images/6.jpg" },
+  { size: "md:col-span-3 md:row-span-1", label: "Benediction", src: "/images/7.jpg" },
 ];
 
 export default function WorshipNightGallery() {
@@ -48,7 +48,7 @@ export default function WorshipNightGallery() {
               className={`relative overflow-hidden rounded-[2rem] shadow-lg border border-brand-navy/5 bg-white ${img.size}`}
             >
               <Image
-                src="/images/hero.png"
+                src={img.src}
                 alt={img.label}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-1000"

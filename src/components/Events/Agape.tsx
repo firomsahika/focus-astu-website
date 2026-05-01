@@ -24,7 +24,7 @@ export default function Agape() {
                     >
                         <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/hero.png"
+                                src="/images/13.jpg"
                                 alt="Charity in Adama"
                                 fill
                                 className="object-cover"

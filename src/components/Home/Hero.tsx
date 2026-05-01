@@ -49,7 +49,7 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero.png"
+          src="/images/milto.jpg"
           alt="FOCUS ASTU Fellowship"
           fill
           className="object-cover opacity-50 scale-105"

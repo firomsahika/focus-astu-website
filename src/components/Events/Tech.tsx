@@ -8,7 +8,7 @@ export default function Tech() {
     return (
         <section className="py-24 bg-brand-navy text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-20">
-                <Image src="/images/hero.png" alt="Tech" fill className="object-cover" />
+                <Image src="/images/2.jpg" alt="Tech" fill className="object-cover" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

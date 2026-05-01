@@ -8,7 +8,7 @@ export default function Carnival() {
         <section className="relative py-32 bg-brand-navy overflow-hidden">
             {/* Immersive Background Image */}
             <div className="absolute inset-0 opacity-40 grayscale hover:grayscale-0 transition-all duration-1000">
-                <Image src="/images/fellowship-night.png" alt="Carnival" fill className="object-cover" />
+                <Image src="/images/milto.jpg" alt="Carnival" fill className="object-cover" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 flex justify-center">

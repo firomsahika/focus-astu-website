@@ -7,14 +7,14 @@ export default function GalleryHero() {
   return (
     <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-brand-navy">
       {/* Background Image with Ken Burns Effect */}
-      <motion.div 
+      <motion.div
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 10, ease: "easeOut" }}
         className="absolute inset-0 z-0"
       >
         <Image
-          src="/images/hero.png" // Replace with a wide fellowship group shot
+          src="/images/1.jpg" // Replace with a wide fellowship group shot
           alt="FOCUS ASTU Moments"
           fill
           className="object-cover opacity-30"
@@ -35,7 +35,7 @@ export default function GalleryHero() {
         >
           Visual Testimony
         </motion.div>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

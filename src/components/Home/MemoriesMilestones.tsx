@@ -9,7 +9,7 @@ const MEMORIES = [
     title: "Graduates Day",
     category: "Milestone",
     icon: Star,
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop",
+    image: "/images/1.jpg",
     size: "md:col-span-2 md:row-span-2",
     description: "Honoring those who finished their race with excellence."
   },
@@ -17,7 +17,7 @@ const MEMORIES = [
     title: "Themed Nights",
     category: "Fellowship",
     icon: Heart,
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop",
+    image: "/images/3.jpg",
     size: "md:col-span-2 md:row-span-1",
     description: "Laughter, snacks, and deep conversations under the ASTU stars."
   },
@@ -25,7 +25,7 @@ const MEMORIES = [
     title: "Sister's Night",
     category: "Gathering",
     icon: Calendar,
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop",
+    image: "/images/5.jpg",
     size: "md:col-span-1 md:row-span-1",
     description: "A sacred space for our sisters to connect and grow."
   },
@@ -33,7 +33,7 @@ const MEMORIES = [
     title: "Holiday Celebrations",
     category: "Culture",
     icon: Camera,
-    image: "https://images.unsplash.com/photo-1543807535-eceef0bc6599?q=80&w=800&auto=format&fit=crop",
+    image: "/images/7.jpg",
     size: "md:col-span-1 md:row-span-1",
     description: "Celebrating our diverse traditions in one spirit."
   },

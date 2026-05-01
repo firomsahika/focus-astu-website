@@ -24,7 +24,7 @@ export default function EventsHero() {
                 className="absolute inset-0 z-0"
             >
                 <Image
-                    src="/images/hero.png" // Using the established high-quality fellowship image
+                    src="/images/4.jpg" // Using the established high-quality fellowship image
                     alt="FOCUS ASTU Events"
                     fill
                     className="object-cover opacity-40"
