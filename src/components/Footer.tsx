@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Globe, Camera, Send, Mail, MapPin } from "lucide-react";
+import { Globe, Camera, Send, Mail, PhoneCall, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="flex items-center space-x-6">
               <Link href="#" className="text-white/40 hover:text-brand-gold transition-colors"><Globe size={20} /></Link>
               <Link href="#" className="text-white/40 hover:text-brand-gold transition-colors"><Camera size={20} /></Link>
-              <Link href="#" className="text-white/40 hover:text-brand-gold transition-colors"><Send size={20} /></Link>
+              <Link href="https://t.me/focussastu" className="text-white/40 hover:text-brand-gold transition-colors"><Send size={20} /></Link>
             </div>
           </div>
 
@@ -43,6 +43,14 @@ export default function Footer() {
                 <Mail size={18} className="text-brand-gold shrink-0" />
                 <span>contact@focusastu.org</span>
               </li>
+              <li className="flex items-center space-x-3 text-brand-cream/40">
+                <span>Want to Support Us?</span>
+              </li>
+              <li className="flex flex-col items-center space-x-3 text-brand-cream/40">
+                <span>CBE: 1000626655247(Focus Ministry ASTU)</span>
+                <span className="flex gap-2"><PhoneCall size={18} className="text-brand-gold  shrink-0" />Contact Us: +251903721164/+251960379119</span>
+              </li>
+
             </ul>
           </div>
         </div>

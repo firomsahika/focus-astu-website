@@ -4,26 +4,26 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const MISSION_MICRO_MOMENTS = [
-    { size: "md:col-span-4 md:row-span-2", label: "Main Worship", src: "/images/1.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Prayer", src: "/images/2.jpg" },
-    { size: "md:col-span-3 md:row-span-2", label: "The Word", src: "/images/3.jpg" },
-    { size: "md:col-span-3 md:row-span-1", label: "Nathanim Prep", src: "/images/4.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Welcome", src: "/images/5.jpg" },
-    { size: "md:col-span-3 md:row-span-1", label: "Choir Harmony", src: "/images/6.jpg" },
-    { size: "md:col-span-2 md:row-span-2", label: "Intercession", src: "/images/7.jpg" },
-    { size: "md:col-span-3 md:row-span-2", label: "Fellowship", src: "/images/8.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Digital Team", src: "/images/9.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Greeting", src: "/images/10.jpg" },
-    { size: "md:col-span-3 md:row-span-2", label: "LAD Performance", src: "/images/11.jpg" },
-    { size: "md:col-span-4 md:row-span-1", label: "Audience", src: "/images/12.jpg" },
-    { size: "md:col-span-3 md:row-span-1", label: "Sanctuary", src: "/images/13.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Post-Service", src: "/images/1.jpg" },
-    { size: "md:col-span-3 md:row-span-1", label: "Group Photo", src: "/images/2.jpg" },
-    { size: "md:col-span-2 md:row-span-2", label: "Action Call", src: "/images/3.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Tech Booth", src: "/images/4.jpg" },
-    { size: "md:col-span-3 md:row-span-1", label: "Family Meeting", src: "/images/5.jpg" },
-    { size: "md:col-span-2 md:row-span-1", label: "Blessing", src: "/images/6.jpg" },
-    { size: "md:col-span-3 md:row-span-1", label: "Benediction", src: "/images/7.jpg" },
+    { size: "md:col-span-4 md:row-span-2", label: "Main Worship", src: "/images/mission.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Prayer", src: "/images/mission2.jpg" },
+    { size: "md:col-span-3 md:row-span-2", label: "The Word", src: "/images/mission3.jpg" },
+    { size: "md:col-span-3 md:row-span-1", label: "Nathanim Prep", src: "/images/mission4.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Welcome", src: "/images/mission5.jpg" },
+    { size: "md:col-span-3 md:row-span-1", label: "Choir Harmony", src: "/images/mission6.jpg" },
+    { size: "md:col-span-2 md:row-span-2", label: "Intercession", src: "/images/mission7.jpg" },
+    { size: "md:col-span-3 md:row-span-2", label: "Fellowship", src: "/images/mission8.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Digital Team", src: "/images/mission2.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Greeting", src: "/images/mission.jpg" },
+    { size: "md:col-span-3 md:row-span-2", label: "LAD Performance", src: "/images/mission3.jpg" },
+    { size: "md:col-span-4 md:row-span-1", label: "Audience", src: "/images/mission4.jpg" },
+    { size: "md:col-span-3 md:row-span-1", label: "Sanctuary", src: "/images/mission5.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Post-Service", src: "/images/mission6.jpg" },
+    { size: "md:col-span-3 md:row-span-1", label: "Group Photo", src: "/images/mission7.jpg" },
+    { size: "md:col-span-2 md:row-span-2", label: "Action Call", src: "/images/mission8.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Tech Booth", src: "/images/mission.jpg" },
+    { size: "md:col-span-3 md:row-span-1", label: "Family Meeting", src: "/images/mission2.jpg" },
+    { size: "md:col-span-2 md:row-span-1", label: "Blessing", src: "/images/mission4.jpg" },
+    { size: "md:col-span-3 md:row-span-1", label: "Benediction", src: "/images/mission6.jpg" },
 ];
 
 export default function MissionGallery() {
@@ -48,7 +48,7 @@ export default function MissionGallery() {
                             className={`relative overflow-hidden rounded-xl md:rounded-[2.5rem] group bg-white/5 border border-white/10 ${img.size}`}
                         >
                             <Image
-                                src={img.src }
+                                src={img.src}
                                 alt={img.label}
                                 fill
                                 className="object-cover opacity-60 group-hover:opacity-100 transition-all duration-700"

@@ -1,6 +1,7 @@
 import GalleryHero from '@/components/Gallery/GalleryHero'
 import ScrollImages from '@/components/Gallery/ScrollImages'
 import GridImages from '@/components/Gallery/GridImages'
+import Graduates from "@/components/Gallery/Graduates"
 
 
 const page = () => {
@@ -9,6 +10,7 @@ const page = () => {
             <GalleryHero />
             <ScrollImages />
             <GridImages />
+            <Graduates />
         </div>
     )
 }

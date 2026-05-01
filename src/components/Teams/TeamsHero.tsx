@@ -1,24 +1,44 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin, Users2, ChevronDown } from "lucide-react";
 
-const graceParticles = Array.from({ length: 25 }).map((_, i) => ({
-  id: i,
-  left: `${Math.random() * 100}%`,
-  duration: Math.random() * 8 + 12,
-  delay: Math.random() * 5,
-  size: Math.random() * 4 + 1,
-}));
-
 export default function TeamsHero() {
+  const [particles, setParticles] = useState([]);
+
+  useEffect(() => {
+    const generated = Array.from({ length: 25 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      duration: Math.random() * 8 + 12,
+      delay: Math.random() * 5,
+      size: Math.random() * 4 + 1,
+    }));
+    setParticles(generated);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-navy py-20">
 
+      {/* --- BACKGROUND IMAGE LAYER (Matched to Home Page Style) --- */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/worship night.jpg"
+          alt="Teams Background"
+          fill
+          className="object-cover" // Removed opacity-30 and scale to make it look like Home
+          priority
+        />
+        {/* These two divs create the depth while keeping text readable */}
+        <div className="absolute inset-0 bg-brand-navy/60 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-navy/20 to-brand-navy"></div>
+      </div>
+
       {/* --- Falling Grace Animation Layer --- */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        {graceParticles.map((p) => (
+        {particles.map((p) => (
           <motion.div
             key={p.id}
             initial={{ y: "-10vh", opacity: 0 }}
@@ -44,19 +64,7 @@ export default function TeamsHero() {
         ))}
       </div>
 
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/teams-bg.png"
-          alt="FOCUS ASTU Teams"
-          fill
-          className="object-cover opacity-30 scale-105"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/95 via-brand-navy/70 to-brand-navy"></div>
-      </div>
-
-      {/* Main Content Wrapper - Centered both ways */}
+      {/* Main Content Wrapper */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center">
 
         {/* Subtle Badge */}
@@ -68,17 +76,17 @@ export default function TeamsHero() {
           Our Structure
         </motion.div>
 
-        {/* Minimized Title for a more professional look */}
+        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter"
         >
-          TEAMS & <span className="text-brand-gold italic text-white/90">COORDINATORS</span>
+          TEAMS & <span className="text-brand-gold italic">COORDINATORS</span>
         </motion.h1>
 
-        {/* Verse Card - Balanced Padding */}
+        {/* Verse Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -97,7 +105,7 @@ export default function TeamsHero() {
           </div>
         </motion.div>
 
-        {/* Info Bar - Adaptive Grid */}
+        {/* Info Bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,12 +121,12 @@ export default function TeamsHero() {
             <div key={i} className="p-6 flex flex-col items-center justify-center border-white/5 border-b sm:border-b-0 sm:border-r last:border-0">
               <item.icon className="text-brand-gold/60 mb-2" size={20} />
               <span className="text-[9px] text-white/30 uppercase font-bold tracking-widest mb-1">{item.label}</span>
-              <span className="text-white font-bold text-xs uppercase">{item.val}</span>
+              <span className="text-white font-black text-xs uppercase tracking-tight">{item.val}</span>
             </div>
           ))}
         </motion.div>
 
-        {/* Small Scroll Indicator */}
+        {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
@@ -128,7 +136,6 @@ export default function TeamsHero() {
         </motion.div>
       </div>
 
-      {/* Border Decoration */}
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
     </section>
   );

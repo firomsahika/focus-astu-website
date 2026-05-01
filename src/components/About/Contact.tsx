@@ -15,7 +15,7 @@ const SOCIALS = [
         name: "Telegram",
         icon: Send,
         color: "bg-brand-navy",
-        href: "https://t.me/focus_astu" // Your Telegram channel 
+        href: "https://t.me/focussastu" // Your Telegram channel 
     },
     {
         name: "Facebook",

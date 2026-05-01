@@ -14,7 +14,7 @@ export default function GalleryHero() {
         className="absolute inset-0 z-0"
       >
         <Image
-          src="/images/1.jpg" // Replace with a wide fellowship group shot
+          src="/images/choir.jpg" // Replace with a wide fellowship group shot
           alt="FOCUS ASTU Moments"
           fill
           className="object-cover opacity-30"

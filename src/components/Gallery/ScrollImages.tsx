@@ -5,34 +5,35 @@ import Image from "next/image";
 
 const row1 = [
     "/images/1.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
+    "/images/graduates1.jpg",
+    "/images/worship night.jpg",
     "/images/4.jpg",
-    "/images/5.jpg",
+    "/images/choir.jpg",
     "/images/6.jpg",
-    "/images/7.jpg",
+    "/images/mission.jpg",
     "/images/8.jpg",
-    "/images/9.jpg",
+    "/images/graduates4.jpg",
     "/images/10.jpg",
-    "/images/11.jpg",
+    "/images/choir2.jpg",
     "/images/12.jpg",
-    "/images/13.jpg",
+    "/images/mission5.jpg",
 
 ];
 const row2 = [
     "/images/1.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
+    "/images/graduates1.jpg",
+    "/images/worship night.jpg",
     "/images/4.jpg",
-    "/images/5.jpg",
+    "/images/choir.jpg",
     "/images/6.jpg",
-    "/images/7.jpg",
+    "/images/mission.jpg",
     "/images/8.jpg",
-    "/images/9.jpg",
+    "/images/graduates4.jpg",
     "/images/10.jpg",
-    "/images/11.jpg",
+    "/images/choir2.jpg",
     "/images/12.jpg",
-    "/images/13.jpg",
+    "/images/mission6.jpg",
+
 
 ];
 

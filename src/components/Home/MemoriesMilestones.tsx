@@ -9,7 +9,7 @@ const MEMORIES = [
     title: "Graduates Day",
     category: "Milestone",
     icon: Star,
-    image: "/images/1.jpg",
+    image: "/images/graduates1.jpg",
     size: "md:col-span-2 md:row-span-2",
     description: "Honoring those who finished their race with excellence."
   },
@@ -17,15 +17,15 @@ const MEMORIES = [
     title: "Themed Nights",
     category: "Fellowship",
     icon: Heart,
-    image: "/images/3.jpg",
+    image: "/images/worship night.jpg",
     size: "md:col-span-2 md:row-span-1",
     description: "Laughter, snacks, and deep conversations under the ASTU stars."
   },
   {
-    title: "Sister's Night",
+    title: "Worship Night",
     category: "Gathering",
     icon: Calendar,
-    image: "/images/5.jpg",
+    image: "/images/choir.jpg",
     size: "md:col-span-1 md:row-span-1",
     description: "A sacred space for our sisters to connect and grow."
   },
