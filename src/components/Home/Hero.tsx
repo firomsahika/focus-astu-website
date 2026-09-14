@@ -124,14 +124,16 @@ export default function Hero() {
           <Link 
           href="/register" 
           className="w-64 sm:w-auto px-8 py-3.5 bg-brand-navy border border-brand-gold text-brand-gold font-bold rounded-full hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-sm shadow-lg shadow-brand-gold/10">
-            JOIN OUR FRIDAY FELLOWSHIP
+            REGISTER NOW
           </Link>
-          <button className="w-64 sm:w-auto px-8 py-3.5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
-            LEARN OUR STORY
-          </button>
+          <Link
+          href="/about"
+          className="w-64 sm:w-auto px-8 py-3.5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
+            SEE OUR STORY
+          </Link>
         </motion.div>
       </div>
-        
+
       {/* Decorative scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
         <motion.div

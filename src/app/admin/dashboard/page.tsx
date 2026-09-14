@@ -8,6 +8,7 @@ type Registration = {
   id: string;
   fullName: string;
   phoneNumber: string;
+  tgUsername: string;
   location: string;
   batch: string;
   faculty: string;
@@ -127,6 +128,7 @@ export default function AdminDashboardPage() {
               <th className="px-4 py-3">No</th>
               <th className="px-4 py-3">Full name</th>
               <th className="px-4 py-3">Phone</th>
+              <th className="px-4 py-3">Tg-username</th>
               <th className="px-4 py-3">Location</th>
               <th className="px-4 py-3">Batch</th>
               <th className="px-4 py-3">Faculty</th>
@@ -137,7 +139,7 @@ export default function AdminDashboardPage() {
           <tbody className="divide-y divide-white/10 text-slate-100">
             {registrations.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-4 py-8 text-center text-slate-300">
+                <td colSpan={9} className="px-4 py-8 text-center text-slate-300">
                   No registrations yet.
                 </td>
               </tr>
@@ -147,6 +149,7 @@ export default function AdminDashboardPage() {
                   <td className="px-4 py-3 font-medium text-slate-300">{startIndex + index + 1}</td>
                   <td className="px-4 py-3 font-medium">{item.fullName}</td>
                   <td className="px-4 py-3">{item.phoneNumber}</td>
+                  <td className="px-4 py-3">{item.tgUsername || "—"}</td>
                   <td className="px-4 py-3">{item.location}</td>
                   <td className="px-4 py-3">{item.batch}</td>
                   <td className="px-4 py-3">{item.faculty}</td>

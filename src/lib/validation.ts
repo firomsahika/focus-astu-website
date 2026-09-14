@@ -3,6 +3,7 @@ import { z } from "zod";
 export const registrationSchema = z.object({
   fullName: z.string().trim().min(2, "Full name is required."),
   phoneNumber: z.string().trim().min(7, "Phone number is required."),
+  tgUsername: z.string().trim().min(2, "Telegram username is required."),
   location: z.string().trim().min(2, "Location/city is required."),
   batch: z.string().trim().min(2, "Batch is required."),
   faculty: z.string().trim().min(2, "Faculty is required."),

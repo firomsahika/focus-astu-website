@@ -20,6 +20,7 @@ export async function POST(request: Request) {
       data: {
         fullName: parsed.data.fullName,
         phoneNumber: parsed.data.phoneNumber,
+        tgUsername: parsed.data.tgUsername,
         location: parsed.data.location,
         batch: parsed.data.batch,
         faculty: parsed.data.faculty,

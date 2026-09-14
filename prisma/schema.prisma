@@ -10,6 +10,7 @@ model Registration {
   id          String   @id @default(cuid())
   fullName    String
   phoneNumber String
+  tgUsername  String
   location    String
   batch       String
   faculty     String
