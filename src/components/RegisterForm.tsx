@@ -46,9 +46,9 @@ export default function RegisterForm() {
   };
 
   return (
-    <section className="bg-brand-navy px-6 py-24 text-brand-navy">
-      <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] border border-brand-navy/10 bg-white p-6 shadow-[0_25px_80px_rgba(11,18,33,0.12)] md:grid-cols-[1.05fr_1.3fr] md:p-10 lg:p-12">
-        <div className="flex flex-col justify-center rounded-[1.5rem] bg-brand-navy p-7 text-white md:p-8">
+    <section className="bg-brand-navy px-3 py-16 text-brand-navy sm:px-4 md:px-6 md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-6 rounded-[2rem] border border-brand-navy/10 bg-white p-4 shadow-[0_25px_80px_rgba(11,18,33,0.12)] sm:p-5 md:grid-cols-[1.05fr_1.3fr] md:p-10 lg:p-12">
+        <div className="flex flex-col justify-center rounded-[1.5rem] bg-brand-navy p-5 text-white sm:p-6 md:p-8">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.28em] text-brand-gold">WELCOME TO FOCUS ASTU</p>
           <h2 className="mb-5 text-4xl font-black leading-tight md:text-5xl">Register to be part of the fellowship</h2>
           <p className="max-w-md text-base leading-7 text-slate-200">
@@ -63,7 +63,7 @@ export default function RegisterForm() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-brand-navy/10 bg-slate-50 p-5 shadow-inner md:p-7">
+        <form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-brand-navy/10 bg-slate-50 p-4 shadow-inner sm:p-5 md:p-7">
           <div className="mb-6 flex items-center justify-between gap-3 border-b border-brand-navy/10 pb-4">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-sage">New student</p>

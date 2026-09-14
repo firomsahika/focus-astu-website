@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link"
 
 // Helper to generate random particles for the "Falling Grace" effect
 const graceParticles = Array.from({ length: 30 }).map((_, i) => ({
@@ -120,15 +121,17 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.0 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
         >
-          <button className="w-64 sm:w-auto px-8 py-3.5 bg-brand-navy border border-brand-gold text-brand-gold font-bold rounded-full hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-sm shadow-lg shadow-brand-gold/10">
+          <Link 
+          href="/register" 
+          className="w-64 sm:w-auto px-8 py-3.5 bg-brand-navy border border-brand-gold text-brand-gold font-bold rounded-full hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-sm shadow-lg shadow-brand-gold/10">
             JOIN OUR FRIDAY FELLOWSHIP
-          </button>
+          </Link>
           <button className="w-64 sm:w-auto px-8 py-3.5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
             LEARN OUR STORY
           </button>
         </motion.div>
       </div>
-
+        
       {/* Decorative scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
         <motion.div
