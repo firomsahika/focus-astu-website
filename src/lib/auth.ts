@@ -50,34 +50,3 @@ export async function getCurrentAdmin() {
   return admin;
 }
 
-export async function ensureDefaultAdmin() {
-  const email = process.env.ADMIN_EMAIL;
-  const password = process.env.ADMIN_PASSWORD;
-
-  if (!email || !password) {
-    throw new Error("Missing ADMIN_EMAIL or ADMIN_PASSWORD environment variables.");
-  }
-
-  const existingAdmin = await prisma.admin.findUnique({
-    where: { email },
-  });
-
-  if (existingAdmin) {
-    return existingAdmin;
-  }
-
-  if(!existingAdmin){
-    throw new Error("User with this credential doesnot exist")
-  }
-
-  const bcrypt = await import("bcryptjs");
-  const passwordHash = await bcrypt.hash(password, 10);
-
-  return prisma.admin.create({
-    data: {
-      email,
-      passwordHash,
-      requiresPasswordChange: true,
-    },
-  });
-}

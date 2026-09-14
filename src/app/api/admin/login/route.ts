@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
-import { ADMIN_SESSION_COOKIE, createSessionValue, ensureDefaultAdmin } from "@/lib/auth";
+import { ADMIN_SESSION_COOKIE, createSessionValue } from "@/lib/auth";
 import { adminLoginSchema } from "@/lib/validation";
 
 export async function POST(request: Request) {
@@ -30,20 +30,11 @@ export async function POST(request: Request) {
       );
     }
 
-    let admin;
-    try {
-      admin = await ensureDefaultAdmin();
-    } catch (error) {
-      console.error("Admin bootstrap error:", error);
-      return NextResponse.json(
-        {
-          error: "The admin account is not configured yet. Check your environment variables.",
-        },
-        { status: 503 }
-      );
-    }
+    const admin = await prisma.admin.findUnique({
+      where: { email },
+    });
 
-    if (email !== admin.email.toLowerCase()) {
+    if (!admin) {
       return NextResponse.json({ error: "Email is incorrect. Please check the email and try again." }, { status: 401 });
     }
 
