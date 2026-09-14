@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import AppShell from "@/components/AppShell";
 
 const inter = Inter({
   variable: "--font-inter", // Fixed naming for consistency
@@ -29,19 +28,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} antialiased selection:bg-brand-gold selection:text-brand-navy font-outfit`}
       >
-        {/* The Header appears at the top of every page */}
-        <Header />
-
-        {/* 
-            Wrapping children in <main> ensures content is 
-            structured correctly for accessibility and SEO 
-        */}
-        <main className="min-h-screen">
-          {children}
-        </main>
-
-        {/* The Footer appears at the bottom of every page */}
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

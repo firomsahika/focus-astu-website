@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function CTA() {
@@ -34,12 +35,12 @@ export default function CTA() {
            transition={{ delay: 0.4 }}
            className="flex flex-col md:flex-row items-center justify-center gap-6"
         >
-          <button className="w-full md:w-auto px-10 py-5 bg-brand-gold text-brand-navy font-black rounded-2xl hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-brand-gold/20">
+          <Link href="/register" className="w-full md:w-auto px-10 py-5 bg-brand-gold text-brand-navy font-black rounded-2xl hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-brand-gold/20 text-center">
             YES, I WANT TO CONNECT!
-          </button>
-          <button className="w-full md:w-auto px-10 py-5 border-2 border-white/20 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">
-            CONTACT A COORDINATOR
-          </button>
+          </Link>
+          <Link href="/admin/login" className="w-full md:w-auto px-10 py-5 border-2 border-white/20 text-white font-bold rounded-2xl hover:bg-white/10 transition-all text-center">
+            PRESIDENT LOGIN
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -65,13 +65,13 @@ export default function Header() {
             );
           })}
           <Link
-            href="#join"
+            href="/register"
             className={`px-6 py-2 rounded-full text-xs font-bold transition-all transform hover:scale-105 active:scale-95 ${isScrolled
               ? "bg-brand-gold text-brand-navy shadow-md"
               : "bg-white text-brand-navy"
               }`}
           >
-            JOIN NOW
+            REGISTER
           </Link>
         </nav>
 
@@ -111,11 +111,11 @@ export default function Header() {
                 );
               })}
               <Link
-                href="#join"
+                href="/register"
                 className="w-full py-4 bg-brand-gold text-brand-navy text-center rounded-xl font-black tracking-widest uppercase text-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                JOIN NOW
+                REGISTER
               </Link>
             </div>
           </motion.div>
